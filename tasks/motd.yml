@@ -8,5 +8,5 @@
 - name: Set last run time in motd
   replace:
     dest: "/etc/motd"
-    regexp: "^(AnsiDepl:[ ]+).*$"
+    regexp: "^(State:[ ]+).*$"
     replace: "\\1Last run at {{ current_deployment_time.stdout }}"
