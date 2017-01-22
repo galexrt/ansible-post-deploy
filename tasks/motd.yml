@@ -1,12 +1,6 @@
 ---
-- name: Get current deployment end time
-  local_action: shell date +'%m/%d/%Y %r %z %Z'
-  register: current_deployment_time
-  become: no
-  run_once: true
-
 - name: Set last run time in motd
   replace:
     dest: "/etc/motd"
     regexp: "^(State:[ ]+).*$"
-    replace: "\\1Last run at {{ current_deployment_time.stdout }}"
+    replace: "\\1Last run at {{ ansible_date_time.iso8601 }}"
