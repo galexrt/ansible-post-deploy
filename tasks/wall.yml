@@ -1,6 +1,8 @@
 ---
 - name: Send out ansible deployment ended broadcast message
-  shell: |
-    echo '+---------------------------------+
-    | => ANSIBLE DEPLOYMENT ENDED! <= |
-    +---------------------------------+' | wall
+  ansible.builtin.shell:
+    warn: false
+    cmd: |
+      echo '+---------------------------------+
+      | => ANSIBLE DEPLOYMENT ENDED! <= |
+      +---------------------------------+' | wall
