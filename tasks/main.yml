@@ -1,4 +1,4 @@
 ---
-- include: motd.yml
+- include_tasks: motd.yml
 
-- include: wall.yml
+- include_tasks: wall.yml
