@@ -1,4 +1,6 @@
 ---
-- include_tasks: motd.yml
+- ansible.builtin.include_tasks:
+    file: motd.yml
 
-- include_tasks: wall.yml
+- ansible.builtin.include_tasks:
+    file: wall.yml
